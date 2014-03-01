@@ -1,0 +1,15 @@
+{
+  "name": "python",
+  "main": "./lib/python",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A short description of your package",
+  "activationEvents": ["python:command"],
+  "repository": "https://github.com/atom/python",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
