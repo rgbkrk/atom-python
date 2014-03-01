@@ -2,12 +2,10 @@
 
 Just a simple way to run selected Python code from Atom.
 
-This is a Work in Progress at the moment.
+Right now the only command is selecting text and then hitting `cmd-i` to run it.
 
 ## TODO
 
-* Design a clean way to show output
+* Make python version configurable
 * Add tests
 * Extract this into a script package?
-
-

@@ -9,5 +9,11 @@ module.exports =
       @pythonView = new PythonView if uri is configUri
 
     atom.workspaceView.command "python:run-selection", =>
-      atom.workspaceView.open(configUri)
-      @pythonView.runSelection()
+      editor = atom.workspace.getActiveEditor()
+      code = editor.getSelectedText()
+
+      if ! code?
+        return
+
+      atom.workspaceView.open(configUri, split: 'right')
+      @pythonView.runit(code)
