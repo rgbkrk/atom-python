@@ -3,6 +3,8 @@
 module.exports =
 class PythonView extends ScrollView
 
+  getTitle: -> "Python"
+
   @content: ->
     @div class: 'editor editor-colors', =>
       @div class: 'lines'
@@ -27,6 +29,8 @@ class PythonView extends ScrollView
 
     options =
       cwd: atom.project.getPath()
+
+    console.log("Running " + command + " " + args)
 
     stdout = (output) => @addLine(output)
     stderr = (output) => @addLine(output)

@@ -3,9 +3,9 @@
   "main": "./lib/python",
   "version": "0.1.0",
   "private": false,
-  "description": "Run a python command from atom.",
+  "description": "Run some python from atom.",
   "activationEvents": [
-    "python:command"
+    "python:run-selection"
   ],
   "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
