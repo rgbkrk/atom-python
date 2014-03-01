@@ -1,20 +1,28 @@
-{ScrollView, BufferedProcess} = require 'atom'
+{$, $$$, ScrollView, BufferedProcess} = require 'atom'
 
 module.exports =
 class PythonView extends ScrollView
+  atom.deserializers.add(this)
+
+  @deserialize: ({code}) ->
+    new PythonView(code)
+
+  serialize: ->
+    deserializer: 'PythonView'
 
   getTitle: -> "Python"
 
   @content: ->
-    @div class: 'editor editor-colors', =>
-      @div class: 'lines'
+    @div class: 'python', tabindex: -1, =>
+      @div class: 'output'
 
   addLine: (line) ->
     console.log(line)
-    @find("div.lines").append("<div class='line'>#{line}</div>")
+    @find("div.output").append("<pre class='line'>#{line}</pre>")
 
   runSelection: ->
     # This assumes the active pane item is an editor
+    # TODO: Make sure this makes sense as an assumption
     editor = atom.workspace.activePaneItem
     code = editor.getSelectedText()
 
