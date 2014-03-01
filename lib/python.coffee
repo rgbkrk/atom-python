@@ -1,24 +1,13 @@
-sys = require('sys')
-exec = require('child_process').exec;
+PythonView = require './python-view'
+
+configUri = "atom://python"
 
 module.exports =
 
   activate: ->
-    atom.workspaceView.command "python:command", => @command()
+    atom.project.registerOpener (uri) =>
+      @pythonView = new PythonView if uri is configUri
 
-  command: ->
-    # This assumes the active pane item is an editor
-    editor = atom.workspace.activePaneItem
-    code = editor.getSelectedText()
-
-    puts = (error, stdout, stderr) ->
-      if stdout?
-        console.log(stdout)
-
-      if error?
-        console.log(error)
-
-      if stderr?
-        console.log(stderr)
-
-    exec("python -c '" + code + "'", puts)
+    atom.workspaceView.command "python:run-selection", =>
+      atom.workspaceView.open(configUri)
+      @pythonView.runSelection()

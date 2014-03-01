@@ -1,24 +1,35 @@
-{View} = require 'atom'
+{ScrollView, BufferedProcess} = require 'atom'
 
 module.exports =
-class PythonView extends View
+class PythonView extends ScrollView
+
   @content: ->
-    @div class: 'python overlay from-top', =>
-      @div "The Python package is Alive! It's ALIVE!", class: "message"
+    @div class: 'editor editor-colors', =>
+      @div class: 'lines'
 
-  initialize: (serializeState) ->
-    atom.workspaceView.command "python:toggle", => @toggle()
+  addLine: (line) ->
+    console.log(line)
+    @find("div.lines").append("<div class='line'>#{line}</div>")
 
-  # Returns an object that can be retrieved when package is activated
-  serialize: ->
+  runSelection: ->
+    # This assumes the active pane item is an editor
+    editor = atom.workspace.activePaneItem
+    code = editor.getSelectedText()
 
-  # Tear down any state and detach
-  destroy: ->
-    @detach()
+    if ! code?
+      return
 
-  toggle: ->
-    console.log "PythonView was toggled!"
-    if @hasParent()
-      @detach()
-    else
-      atom.workspaceView.append(this)
+    @runit(code)
+
+  runit: (code) ->
+    command = 'python'
+    args = ['-c', code]
+
+    options =
+      cwd: atom.project.getPath()
+
+    stdout = (output) => @addLine(output)
+    stderr = (output) => @addLine(output)
+    exit = (return_code) -> console.log("Exited with #{return_code}")
+
+    process = new BufferedProcess({command, args, options, stdout, stderr, exit})
