@@ -1,11 +1,10 @@
 {
   "name": "python",
   "main": "./lib/python",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": false,
   "description": "Run some python from atom.",
-  "activationEvents": [
-  ],
+  "activationEvents": [],
   "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
   "engines": {
