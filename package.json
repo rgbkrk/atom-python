@@ -1,15 +1,16 @@
 {
   "name": "python",
   "main": "./lib/python",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Run a python command from atom.",
-  "activationEvents": ["python:command"],
+  "activationEvents": [
+    "python:command"
+  ],
   "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
