@@ -5,12 +5,12 @@
   "private": false,
   "description": "Run some python from atom.",
   "activationEvents": [
-    "python:run-selection"
   ],
   "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.50.0",
+    "script": ">1.1.1"
   },
   "dependencies": {}
 }
