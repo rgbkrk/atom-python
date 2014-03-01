@@ -5,7 +5,7 @@
   "private": true,
   "description": "Run a python command from atom.",
   "activationEvents": ["python:command"],
-  "repository": "https://github.com/atom/python",
+  "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
   "engines": {
     "atom": ">0.50.0"
