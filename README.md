@@ -2,7 +2,9 @@
 
 Just a simple way to run selected Python code from Atom.
 
-Right now the only command is selecting text and then hitting `cmd-i` to run it.
+Simply select some code and hit `cmd-i`. A split view will come up for each run.
+
+![]()
 
 ## TODO
 
