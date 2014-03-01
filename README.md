@@ -1,3 +1,6 @@
-# python package
+# Python for atom
 
-A short description of your package.
+Just a simple way to run selected Python code from Atom.
+
+This is a Work in Progress at the moment as I'm learning Atom, Coffescript and
+node.

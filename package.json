@@ -2,7 +2,7 @@
   "name": "python",
   "main": "./lib/python",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "description": "Run a python command from atom.",
   "activationEvents": [
     "python:command"
