@@ -3,13 +3,12 @@
   "main": "./lib/python",
   "version": "0.5.0",
   "private": false,
-  "description": "Run some python from atom.",
+  "description": "Use script instead please.",
   "activationEvents": [],
   "repository": "https://github.com/rgbkrk/atom-python",
   "license": "Apache 2",
   "engines": {
-    "atom": ">0.50.0",
-    "script": ">1.1.1"
+    "atom": ">0.50.0"
   },
   "dependencies": {}
 }
