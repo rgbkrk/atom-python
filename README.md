@@ -1,4 +1,4 @@
 # Python for atom
 
-**Please use [the script package](https://github.com/rgbkrk/atom-script) instead.** This package will
+**Please use [the script package](https://atom.io/packages/script) instead.** This package will
 pull from it in the future.
